@@ -11,11 +11,13 @@
   },
   "scripts": {
     "check:jdk": "node scripts/check-jdk.js",
+    "start": "npm run start --workspace apps/mobile",
     "mobile": "npm run start --workspace apps/mobile",
+    "typecheck": "npm run typecheck --workspace apps/mobile",
     "android": "npm run check:jdk && npm run android --workspace apps/mobile",
     "server": "npm run start --workspace apps/server",
     "server:dev": "npm run dev --workspace apps/server",
-    "ios": "expo run:ios"
+    "ios": "npm run ios --workspace apps/mobile"
   },
   "dependencies": {
     "expo": "~52.0.49",

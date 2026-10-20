@@ -1,4 +1,4 @@
-# Evento monorepo
+# Evento
 
 ```
 apps/mobile   Expo SDK 52 + Expo Router (React Native 0.76, new arch off)
