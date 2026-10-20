@@ -2,6 +2,7 @@
   "name": "evento",
   "version": "1.0.0",
   "private": true,
+  "main": "index.js",
   "workspaces": [
     "apps/mobile",
     "apps/server"

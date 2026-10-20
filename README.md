@@ -37,6 +37,7 @@ cd apps/mobile
 npx expo-doctor                                 # optional sanity check
 npx expo run:android
 ```
+Always run Expo commands from `apps/mobile`, or use the root scripts (`npm run android`, `npm start`). Running `npx expo ...` in the repo root fails with `Unable to resolve "../../App"` because the Expo app lives in `apps/mobile`.
 Set `EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY` in `apps/mobile/.env` using your Supabase project's API settings. For existing local setups, `EXPO_PUBLIC_SUPABASE_ANON_KEY` remains supported as a fallback. The app shows a setup screen if either value is missing or the URL is invalid. Restart Expo after editing `.env` so the values are included in the bundle. Never use the secret key in the mobile app or commit `.env`.
 `plugins/withJava17.js` runs during prebuild: it aborts with a clear message unless the JDK is 17, injects
 `compileOptions`/`kotlinOptions` for Java 17 into `android/app/build.gradle`, and pins `org.gradle.java.home` to your `JAVA_HOME`.
