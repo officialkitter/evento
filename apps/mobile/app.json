@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Evento",
+    "slug": "evento",
+    "version": "1.0.0",
+    "scheme": "evento",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": false,
+    "backgroundColor": "#FAF8F5",
+    "android": {
+      "package": "com.evento.platform",
+      "versionCode": 1,
+      "permissions": ["CAMERA", "ACCESS_NETWORK_STATE"]
+    },
+    "ios": {
+      "bundleIdentifier": "com.evento.platform",
+      "supportsTablet": false
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "minSdkVersion": 24,
+            "buildToolsVersion": "35.0.0"
+          }
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Evento uses the camera to scan guest and ticket QR codes at reception."
+        }
+      ],
+      "./plugins/withJava17"
+    ]
+  }
+}

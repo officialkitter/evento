@@ -1,0 +1,25 @@
+{
+  "name": "evento",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/mobile",
+    "apps/server"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check:jdk": "node scripts/check-jdk.js",
+    "mobile": "npm run start --workspace apps/mobile",
+    "android": "npm run check:jdk && npm run android --workspace apps/mobile",
+    "server": "npm run start --workspace apps/server",
+    "server:dev": "npm run dev --workspace apps/server",
+    "ios": "expo run:ios"
+  },
+  "dependencies": {
+    "expo": "~52.0.49",
+    "react": "18.3.1",
+    "react-native": "0.76.9"
+  }
+}
