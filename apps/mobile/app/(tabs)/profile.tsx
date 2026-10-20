@@ -16,7 +16,7 @@ export default function Profile() {
       <View style={{ padding: 20 }}>
         <Card>
           <Text style={{ color: colors.muted, fontSize: 13, fontWeight: '700' }}>Signed in as</Text>
-          <Text style={{ color: colors.brown, fontSize: 18, fontWeight: '800', marginTop: 4 }}>{user?.phone ? `+${user.phone.replace(/^\+/, '')}` : user?.email ?? '-'}</Text>
+          <Text style={{ color: colors.brown, fontSize: 18, fontWeight: '800', marginTop: 4 }}>{user?.email ?? (user?.phone ? `+${user.phone.replace(/^\+/, '')}` : '-')}</Text>
         </Card>
         <Button title="Find public tickets" variant="brown" onPress={() => router.push('/ticket')} />
         <Button title="Sign out" variant="ghost" onPress={() => void signOut()} style={{ marginTop: 12 }} />

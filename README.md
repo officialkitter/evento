@@ -28,6 +28,7 @@ Railway: create a service from this repo, set **Root Directory** to `apps/server
 Use the Supabase project URL, publishable key, secret key, and JWKS URL. Keep `SUPABASE_SECRET_KEY` only in server-side environment variables; never add it to the mobile app or commit it.
 Point your mobile-money provider's callback at `POST /api/webhooks/mobile-money` (HMAC-SHA256 of the raw body in `x-signature`).
 Adapt `src/services/mobileMoney.js` (`parseEvent`, `initiateCharge`) to your provider's real payload and API.
+Authentication: new users **sign up** with email + password and confirm an emailed OTP (in the Supabase dashboard, enable email confirmation and put `{{ .Token }}` in the *Confirm signup* template); returning users **log in** with email + password only, and the session persists until they sign out. Create the demo account `test@evento.com` / `test123456` with `npm run seed:test-user --workspace apps/server` (needs a valid `SUPABASE_SECRET_KEY`).
 
 ## 3. Mobile
 ```

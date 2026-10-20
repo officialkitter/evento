@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "check": "node --check server.js"
+    "check": "node --check server.js",
+    "seed:test-user": "node scripts/seed-test-user.js"
   },
   "dependencies": {
     "@supabase/server": "1.9.2",
